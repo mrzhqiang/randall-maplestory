@@ -1,0 +1,12 @@
+logging:
+  level:
+    ROOT: INFO
+
+spring:
+  profiles:
+    include:
+      - db
+      - ms
+  messages:
+    basename: i18n.messages
+    fallback-to-system-locale: false

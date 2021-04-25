@@ -1,0 +1,158 @@
+ms:
+  # 频道服务
+  channel:
+    # 开放的频道数量
+    count: 3
+
+  # 世界服务
+  world:
+    # 倍数：表述为原来数值的 N 倍
+    timer:
+      # 经验值
+      exp: 2
+      # 原属性名为：meso，改为 gold 比较合适，表示掉落金币数量
+      gold: 2
+      # 怪物掉落物品几率
+      drop: 2
+      # Boss 掉落物品几率
+      boss-dorp: 2
+      cash: 0
+
+    name: '兰达尔冒险岛'
+    message:
+      event: ''
+      server: 欢迎来到${ms.world.name}，祝您游戏愉快！
+    flag: 3
+    auto-register: true
+    wflags: 0
+    admin: false
+    user-limit: 100
+    max-characters: 3
+    port: 7575
+    login-port: 9595
+    sc-port: 8600
+    ip: 127.0.0.1
+    debug: false
+    packet:
+      show: false
+      debug: false
+    adventurer: true
+    knights: false
+    ares: false
+    events:
+      - Relic
+      - HontalePQ
+      - HorntailBattle
+      - cpq2
+      - elevator
+      - Christmas
+      - FireDemon
+      - Amoria
+      - cpq
+      - AutomatedEvent
+      - Flight
+      - English
+      - English0
+      - English1
+      - English2
+      - WuGongPQ
+      - ElementThanatos
+      - 4jberserk
+      - 4jrush
+      - Trains
+      - Geenie
+      - AirPlane
+      - Boats
+      - OrbisPQ
+      - HenesysPQ
+      - Romeo
+      - Juliet
+      - Pirate
+      - Ellin
+      - DollHouse
+      - BossBalrog_NORMAL
+      - Nibergen
+      - PinkBeanBattle
+      - ZakumBattle
+      - NamelessMagicMonster
+      - Dunas
+      - Dunas2
+      - ZakumPQ
+      - LudiPQ
+      - KerningPQ
+      - ProtectTylus
+      - Vergamot
+      - CoreBlaze
+      - GuildQuest
+      - Aufhaven
+      - Subway
+      - KyrinTrainingGroundC
+      - KyrinTrainingGroundV
+      - ProtectPig
+      - ScarTarBattle
+      - s4resurrection
+      - s4resurrection2
+      - s4nest
+      - s4aWorld
+      - DLPracticeField
+      - ServerMessage
+      - BossQuestEASY
+      - BossQuestHARD
+      - BossQuestHELL
+      - BossQuestMed
+      - shaoling
+      - Ravana
+      - MV
+      - BossBalrog
+      - QiajiPQ
+      - Relic
+    cashban:
+      - 4170000
+      - 5490000
+      - 5490001
+      - 5201002
+      - 5201001
+      - 5330000
+      - 5122000
+      - 2022327
+      - 2022328
+      - 5121016
+      - 5152100
+      - 5152101
+      - 5152102
+      - 5152103
+      - 5152104
+      - 5152105
+      - 5152106
+      - 5152107
+      - 5470000
+      - 5060000
+      - 5075000
+      - 5075001
+      - 5075002
+      - 5075005
+      - 5075004
+      - 5075003
+      - 5220040
+      - 5121015
+      - 5281000
+      - 5281001
+      - 5075000
+      - 5075001
+      - 5480011
+      - 5480010
+      - 5042001
+      - 1112013
+      - 5532000
+      - 5532001
+      - 5532002
+      - 10001818
+      - 70000146
+      - 70000147
+      - 70000148
+    cashjy:
+      - 0
+      - 0
+    gysj:
+      - 0
+      - 0
