@@ -1,13 +1,24 @@
 ms:
+  # 游戏名称
+  name: 兰达尔冒险岛
+  # IP 地址 todo 看看是否有必要
+  address: 127.0.0.1
+  # 登录端口
+  login-port: 9595
+  # 商城端口
+  mall-port: 8600
+  # 是否开启调试
+  debug: false
   # 频道服务
   channel:
+    # 频道起始端口
+    port: 7575
     # 开放的频道数量
     count: 3
-
   # 世界服务
   world:
     # 倍数：表述为原来数值的 N 倍
-    timer:
+    times:
       # 经验值
       exp: 2
       # 原属性名为：meso，改为 gold 比较合适，表示掉落金币数量
@@ -15,30 +26,38 @@ ms:
       # 怪物掉落物品几率
       drop: 2
       # Boss 掉落物品几率
-      boss-dorp: 2
+      boss-drop: 2
+      # todo 待理解
       cash: 0
-
-    name: '兰达尔冒险岛'
     message:
+      # todo
       event: ''
-      server: 欢迎来到${ms.world.name}，祝您游戏愉快！
+      # 欢迎语
+      server: 欢迎来到${ms.name}，祝您游戏愉快！
+    # todo 待理解
     flag: 3
+    # 输入账号密码自动注册
     auto-register: true
-    wflags: 0
-    admin: false
+    w-flags: 0
+    # 开启则只允许管理员登录
+    admin-only: false
+    # 服务器同时在线最大人数
     user-limit: 100
+    # todo 待理解
     max-characters: 3
-    port: 7575
-    login-port: 9595
-    sc-port: 8600
-    ip: 127.0.0.1
-    debug: false
+    # 封包控制
     packet:
+      # 是否显示封包
       show: false
+      # 是否显示调试封包
       debug: false
+    # 开启冒险家职业群
     adventurer: true
+    # 开启骑士团职业群
     knights: false
+    # 开启战神职业
     ares: false
+    # 事件列表 todo 待理解
     events:
       - Relic
       - HontalePQ
@@ -106,6 +125,7 @@ ms:
       - BossBalrog
       - QiajiPQ
       - Relic
+    # 屏蔽 ID todo 待理解
     cashban:
       - 4170000
       - 5490000
@@ -150,9 +170,11 @@ ms:
       - 70000146
       - 70000147
       - 70000148
+    # todo 待理解
     cashjy:
       - 0
       - 0
+    # todo 待理解
     gysj:
       - 0
       - 0
