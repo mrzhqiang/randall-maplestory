@@ -4,6 +4,7 @@ import lombok.Getter;
 import randall.maplestory.domain.Character;
 import randall.maplestory.domain.Guild;
 
+import javax.annotation.Nonnull;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -15,7 +16,7 @@ public class MapleGuild {
 
     private final Guild guild;
 
-    public MapleGuild(Guild guild) {
+    public MapleGuild(@Nonnull Guild guild) {
         this.guild = guild;
         guild.getMembers().stream()
                 .map(Character::getId)
@@ -23,5 +24,11 @@ public class MapleGuild {
         guild.getThreads().stream()
                 .map(MapleBbsThread::new)
                 .forEach(it -> bbs.put(it.getBbsThread().getLocalthreadid(), it));
+    }
+
+    // proper = !guild.getMembers().isEmpty() && guild.getLeader() != null
+    // if false than No members in guild. Impossible... guild is disbanding
+    public boolean proper() {
+        return !guild.getMembers().isEmpty() && guild.getLeader() != null;
     }
 }

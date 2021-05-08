@@ -3,10 +3,8 @@ package randall.maplestory.world.family;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import randall.maplestory.logger.StopwatchMark;
-import randall.maplestory.repository.FamilieRepository;
 
 import java.util.Map;
-import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Component
@@ -20,7 +18,7 @@ public class FamilyManage {
     @StopwatchMark("加载学院系统")
     public void init() {
         service.loadAll().stream()
-                .filter(it -> Objects.nonNull(it.getFamilie().getLeader()))
+                .filter(MapleFamily::proper)
                 .forEach(it -> familyMap.put(it.getFamilie().getFamilyid(), it));
     }
 }

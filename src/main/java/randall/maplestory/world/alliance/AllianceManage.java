@@ -1,14 +1,12 @@
-package randall.maplestory.world.guild;
+package randall.maplestory.world.alliance;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import randall.maplestory.logger.StopwatchMark;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-@Slf4j
 @Component
 @RequiredArgsConstructor
 public class AllianceManage {

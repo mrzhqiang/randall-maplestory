@@ -17,8 +17,9 @@ public class Alliance {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "leaderid", nullable = false)
-    private Integer leaderid;
+    @OneToOne
+    @JoinColumn(name = "leaderid", nullable = false, foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
+    private Character leaderid;
 
     @Column(name = "guild1", nullable = false)
     private Integer guild1;

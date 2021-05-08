@@ -1,4 +1,4 @@
-package randall.maplestory.world.guild;
+package randall.maplestory.world.alliance;
 
 import lombok.Getter;
 import randall.maplestory.domain.Alliance;

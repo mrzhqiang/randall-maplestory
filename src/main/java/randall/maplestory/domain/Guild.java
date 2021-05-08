@@ -3,6 +3,7 @@ package randall.maplestory.domain;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Collections;
 import java.util.List;
 
 @Data
@@ -21,7 +22,7 @@ public class Guild {
 
     @OneToMany(mappedBy = "guild")
     @OrderBy("guildrank ASC, name ASC")
-    private List<Character> members;
+    private List<Character> members = Collections.emptyList();
 
     @OneToMany(mappedBy = "guild")
     @OrderBy("localthreadid DESC")

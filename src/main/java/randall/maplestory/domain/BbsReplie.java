@@ -18,6 +18,7 @@ public class BbsReplie {
     @JoinColumn(name = "threadid", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
     private BbsThread thread;
 
+    // ownerID
     @Column(name = "postercid", nullable = false)
     private Integer postercid;
 
