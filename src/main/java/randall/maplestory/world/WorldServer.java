@@ -1,15 +1,14 @@
 package randall.maplestory.world;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import randall.maplestory.logger.StopwatchMark;
-import randall.maplestory.world.family.FamilyManage;
 import randall.maplestory.world.alliance.AllianceManage;
+import randall.maplestory.world.family.FamilyManage;
 import randall.maplestory.world.guild.GuildManage;
 import randall.maplestory.world.messenger.MessengerManage;
+import randall.maplestory.world.party.PartyManage;
 
-@Slf4j
 @Component
 @RequiredArgsConstructor
 public class WorldServer {
@@ -19,6 +18,7 @@ public class WorldServer {
     private final AllianceManage allianceManage;
     private final FamilyManage familyManage;
     private final MessengerManage messengerManage;
+    private final PartyManage partyManage;
 
     @StopwatchMark("初始化世界服务器")
     public void init() {
@@ -28,6 +28,7 @@ public class WorldServer {
         allianceManage.init();
         familyManage.init();
         messengerManage.getMessenger(0);
+        partyManage.getParty(0);
     }
 
 }
