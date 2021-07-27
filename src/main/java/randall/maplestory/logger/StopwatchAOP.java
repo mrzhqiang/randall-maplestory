@@ -17,7 +17,7 @@ import java.lang.reflect.Method;
 public class StopwatchAOP {
 
     public static final String BEFORE_TEMPLATE = "准备开始 {}...";
-    public static final String AFTER_TEMPLATE = "{} 已经完成！耗时：{}";
+    public static final String AFTER_TEMPLATE = "{} 完成！耗时：{}";
 
     @Around("@annotation(randall.maplestory.logger.StopwatchMark)")
     public Object handleLog(ProceedingJoinPoint point) throws Throwable {

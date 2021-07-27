@@ -14,15 +14,14 @@ public class MapleStoryProperties {
 
     public static final int DEFAULT_LOGIN_PORT = 9595;
     public static final int DEFAULT_MALL_PORT = 8600;
-
     public static final int DEFAULT_CHANNEL_PORT = 7575;
     public static final int DEFAULT_CHANNEL_COUNT = 3;
-
     public static final int DEFAULT_TIMES_EXP = 1;
     public static final int DEFAULT_TIMES_GOLD = 1;
     public static final int DEFAULT_TIMES_DROP = 1;
     public static final int DEFAULT_TIMES_BOSS_DROP = 1;
     public static final int DEFAULT_TIMES_CASH = 0;
+    public static final int DEFAULT_USER_LIMIT = 1000;
 
     private String name = DEFAULT_WORLD_NAME;
     private String address = DEFAULT_ADDRESS;
@@ -57,7 +56,7 @@ public class MapleStoryProperties {
          * True -- 只允许管理员登录
          */
         private Boolean adminOnly = false;
-        private Integer userLimit = 100;
+        private Integer userLimit = DEFAULT_USER_LIMIT;
         private Integer maxCharacters = 3;
         private Packet packet;
         /**

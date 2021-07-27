@@ -11,6 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @RequiredArgsConstructor
 public class GuildManage {
 
+    // 原版本是 LinkedHashMap，以插入顺序排序，读写加锁
     private final Map<Integer, MapleGuild> guilds = new ConcurrentHashMap<>();
 
     private final GuildService service;

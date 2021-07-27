@@ -15,6 +15,8 @@ import java.util.concurrent.TimeUnit;
  * EnableScheduling 通过检测是否存在 ScheduledExecutorService 来设定执行器。
  * <p>
  * 后续需要主动调用 ScheduledExecutorService 的地方，也可以将它注入再调用。
+ * <p>
+ * fixme 在 079 版本中，每个不同的功能都创建一个线程池，我们后面再看看要不要这样做。
  */
 @EnableAsync
 @EnableScheduling

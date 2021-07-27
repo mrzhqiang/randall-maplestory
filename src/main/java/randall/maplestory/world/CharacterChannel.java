@@ -1,33 +1,22 @@
 package randall.maplestory.world;
 
 import com.google.common.base.Strings;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import randall.maplestory.config.MapleStoryProperties;
 import randall.maplestory.world.channel.ChannelServer;
 
-import javax.annotation.PostConstruct;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+
+import static randall.maplestory.config.MapleStoryProperties.DEFAULT_USER_LIMIT;
 
 /**
  * 角色频道。
  */
 @Component
-@RequiredArgsConstructor
 public final class CharacterChannel {
 
-    private final MapleStoryProperties properties;
-
-    private Map<Integer, Integer> idChannel;
-    private Map<String, Integer> nameChannel;
-
-    @PostConstruct
-    public void init() {
-        Integer userLimit = properties.getWorld().getUserLimit();
-        idChannel = new ConcurrentHashMap<>(userLimit);
-        nameChannel = new ConcurrentHashMap<>(userLimit);
-    }
+    private final Map<Integer, Integer> idChannel = new ConcurrentHashMap<>(DEFAULT_USER_LIMIT);
+    private final Map<String, Integer> nameChannel = new ConcurrentHashMap<>(DEFAULT_USER_LIMIT);
 
     public boolean register(Integer id, String name, Integer channel) {
         if (id == null || Strings.isNullOrEmpty(name) || channel == null) {
@@ -62,15 +51,12 @@ public final class CharacterChannel {
 
     public int findChannelBy(Integer id) {
         int defaultValue = -1;
+        // key 不能是 null
         if (id == null) {
             return defaultValue;
         }
 
-        Integer channel = idChannel.get(id);
-        if (channel == null) {
-            return defaultValue;
-        }
-
+        Integer channel = idChannel.getOrDefault(id, defaultValue);
         // -10 表示 cash shop
         // -20 表示 cash shop MTS
         if (channel != -10 && channel != -20 && !ChannelServer.findBy(channel).isPresent()) {

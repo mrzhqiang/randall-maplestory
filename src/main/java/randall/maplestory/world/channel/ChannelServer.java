@@ -5,6 +5,7 @@ import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ChannelServer {
+
     private static final Map<Integer, ChannelServer> CHANNEL_SERVER_MAP = new ConcurrentHashMap<>();
 
     public static Optional<ChannelServer> findBy(Integer channel) {

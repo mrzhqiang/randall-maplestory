@@ -22,7 +22,6 @@ public class WorldServer {
 
     @StopwatchMark("初始化世界服务器")
     public void init() {
-        // todo remove here and call as character channel init
         characterChannel.findChannelBy(0);
         guildManage.init();
         allianceManage.init();
