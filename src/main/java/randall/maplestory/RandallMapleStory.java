@@ -14,6 +14,7 @@ import randall.maplestory.account.AccountRepository;
 import randall.maplestory.config.MapleStoryProperties;
 import randall.maplestory.world.MapleLifeFactory;
 import randall.maplestory.world.WorldServer;
+import randall.maplestory.world.quest.QuestManage;
 
 import javax.annotation.Nonnull;
 
@@ -69,11 +70,13 @@ public class RandallMapleStory {
 
         private final WorldServer worldServer;
         private final MapleLifeFactory mapleLifeFactory;
+        private final QuestManage questManage;
 
         @Override
         public void run(ApplicationArguments args) {
             worldServer.init();
             mapleLifeFactory.loadQuestCounts();
+            questManage.initQuests();
         }
     }
 

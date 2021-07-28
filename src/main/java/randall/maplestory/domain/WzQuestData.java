@@ -2,10 +2,8 @@ package randall.maplestory.domain;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -40,4 +38,10 @@ public class WzQuestData {
     @Column(name = "autoComplete", nullable = false)
     private Integer autoComplete = 0;
 
+    @OneToMany(mappedBy = "questid")
+    private List<WzQuestReqData> questReqDataList;
+    @OneToMany(mappedBy = "questid")
+    private List<WzQuestActData> questActDataList;
+    @OneToMany(mappedBy = "questid")
+    private List<WzQuestPartyData> questPartyDataList;
 }

@@ -35,7 +35,10 @@ public class WzQuestActItemData {
     @Column(name = "prop", nullable = false)
     private Integer prop = -1;
 
-    @Column(name = "uniqueid", nullable = false)
-    private Integer uniqueid = 0;
+//    @Column(name = "uniqueid", nullable = false)
+//    private Integer uniqueid = 0;
 
+    @ManyToOne
+    @JoinColumn(name = "uniqueid", referencedColumnName = "uniqueid", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
+    private WzQuestActData actData;
 }

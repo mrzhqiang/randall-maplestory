@@ -3,6 +3,7 @@ package randall.maplestory.domain;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -32,4 +33,15 @@ public class WzQuestActData {
     @Column(name = "uniqueid", nullable = false)
     private Integer uniqueid = 0;
 
+    @OneToMany(mappedBy = "actData")
+    @JoinColumn(foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
+    private List<WzQuestActItemData> itemDataList;
+
+    @OneToMany(mappedBy = "actData")
+    @JoinColumn(foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
+    private List<WzQuestActQuestData> questDataList;
+
+    @OneToMany(mappedBy = "actData")
+    @JoinColumn(foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
+    private List<WzQuestActSkillData> skillDataList;
 }

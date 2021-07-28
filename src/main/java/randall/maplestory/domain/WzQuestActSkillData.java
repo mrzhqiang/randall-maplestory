@@ -23,7 +23,10 @@ public class WzQuestActSkillData {
     @Column(name = "masterLevel", nullable = false)
     private Integer masterLevel = -1;
 
-    @Column(name = "uniqueid", nullable = false)
-    private Integer uniqueid = 0;
+//    @Column(name = "uniqueid", nullable = false)
+//    private Integer uniqueid = 0;
 
+    @ManyToOne
+    @JoinColumn(name = "uniqueid", referencedColumnName = "uniqueid", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
+    private WzQuestActData actData;
 }
